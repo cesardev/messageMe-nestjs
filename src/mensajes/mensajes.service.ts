@@ -13,6 +13,10 @@ export class MensajesService {
 
     async getAll(): Promise<Mensaje[]> {
         return await this.mensajeRepository.find();
+        // return await this.mensajeRepository.find({
+        //     select: ['mensaje'],
+        //     where: [{ id: 1 }],
+        // });
     }
 
     async createMensaje(mensajeNuevo: CreateMensajeDto): Promise<Mensaje> {
